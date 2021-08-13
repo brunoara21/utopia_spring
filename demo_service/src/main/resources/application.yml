@@ -1,0 +1,12 @@
+spring:
+  main:
+    web-application-type: reactive
+  application:
+    name: API-GATEWAY
+  cloud:
+      gateway:
+        routes:
+          - id: USER
+            uri: lb://USER
+            predicates:
+              - Path=/users/**

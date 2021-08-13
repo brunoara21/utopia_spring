@@ -1,6 +1,5 @@
 package com.ss.user_service.controller;
 
-
 import java.util.List;
 import java.util.Optional;
 
@@ -19,9 +18,8 @@ import com.ss.user_service.entity.User;
 import com.ss.user_service.service.UserService;
 
 @RestController
-@RequestMapping("/user")
-public class UserController {
-
+@RequestMapping("/users/admin")
+public class AdminController {
 
 	@Autowired
 	private UserService userService;
@@ -43,5 +41,4 @@ public class UserController {
 	}
 	
 	
-
 }

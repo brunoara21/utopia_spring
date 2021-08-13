@@ -1,5 +1,6 @@
 package com.ss.user_service.entity;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import javax.persistence.CascadeType;
@@ -7,14 +8,23 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="booking_agent")
-public class BookingAgent {
+public class BookingAgent implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
+	private Integer id;
+	
+	@MapsId
 	@OneToOne
 	@JoinColumn(name="booking_id", referencedColumnName = "id")
 	private Booking booking;

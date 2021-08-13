@@ -1,19 +1,30 @@
 package com.ss.user_service.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="booking_guest")
-public class BookingGuest {
+public class BookingGuest implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
+	private Integer id;
+	
+	@MapsId
 	@OneToOne
-	@JoinColumn(name="booking_id", referencedColumnName="")
+	@JoinColumn(name="booking_id", referencedColumnName="id")
 	private Booking booking;
 	
 	@Column(name="contact_email")

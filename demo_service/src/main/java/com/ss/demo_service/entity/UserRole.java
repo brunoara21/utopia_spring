@@ -1,4 +1,4 @@
-package com.ss.user_service.entity;
+package com.ss.demo_service.entity;
 
 import java.io.Serializable;
 import java.util.HashSet;

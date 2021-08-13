@@ -12,7 +12,7 @@ import com.ss.user_service.entity.BookingUser;
 public class BookingUserService {
 
 	@Autowired
-	BookingUserDao bookingUserDao;
+	private BookingUserDao bookingUserDao;
 	
 	public List<BookingUser> getAllBookingUsers(){
 		return bookingUserDao.findAll();
