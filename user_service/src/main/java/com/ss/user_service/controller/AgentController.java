@@ -3,6 +3,9 @@ package com.ss.user_service.controller;
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 //import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +30,7 @@ public class AgentController {
 	@Autowired
 	private UserService userService;
 
+	Logger logger = LoggerFactory.getLogger(AgentController.class);
 
 	
 	@GetMapping(value="")
@@ -37,12 +41,10 @@ public class AgentController {
 	
 	@GetMapping("/{userId}")
 	public Optional<User> getUserById(@PathVariable Integer userId) {
-		return userService.getUserById(userId);
-	}
-	
-	@PostMapping("/admin")
-	public User createAdmin(@RequestBody User user) {
-		return userService.createAdmin(user, "admin");
+		Optional<User> user = userService.getUserById(userId);
+		
+		logger.error("HELLO");
+		return user;
 	}
 	
 	
