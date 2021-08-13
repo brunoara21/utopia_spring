@@ -37,3 +37,6 @@ build/
 
 booking_service/
 flight_service/
+demo_service/
+
+.gitignore
